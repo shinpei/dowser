@@ -22,6 +22,19 @@ func (this *Dowser) Initiate(docRoot string) {
 		}
 		docRoot = user.HomeDir + "/.dowsing";
 		log.Printf("set default docRoot: %s\n", docRoot);
-
 	}
+
+}
+
+func (this *Dowser) Encode2Document (data string) *Document {
+	return &Document{ bodyField: data};
+}
+
+func (this *Dowser) UpdateIndex(doc *Document) {
+
+
+}
+
+func (this *Dowser) Search (query string) *DowserResponse {
+	return &DowserResponse{"hoge"};
 }
