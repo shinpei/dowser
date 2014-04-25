@@ -1,5 +1,13 @@
 package dowser
 
 type Index struct {
-    inverseIndex map[string] string;
+    inverseIndex map[string] int;
+}
+
+func (this *Index) IssueQuery(query string) []int {
+  return make ([]int, 10);
+}
+
+func (this *Index) GetDocument (position int) *DowserResponse{
+  return nil;
 }

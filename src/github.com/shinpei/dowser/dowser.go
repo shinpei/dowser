@@ -7,6 +7,7 @@ import (
 
 type Dowser struct {
 	docRoot string;
+	index Index;
 
 }
 
@@ -36,5 +37,6 @@ func (this *Dowser) UpdateIndex(doc *Document) {
 }
 
 func (this *Dowser) Search (query string) *DowserResponse {
-	return &DowserResponse{"hoge"};
+			positions := this.index.IssueQuery(query);
+			return this.index.GetDocument(positions[0]);
 }
