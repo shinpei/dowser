@@ -6,6 +6,7 @@ import (
 "fmt"
 "encoding/json"
 "log"
+"github.com/shinpei/dowser"
 )
 
 type Hoge struct {
