@@ -4,7 +4,6 @@ import (
 "github.com/go-martini/martini"
 "net/http"
 "fmt"
-"github.com/shinpei/dowser"
 "encoding/json"
 "log"
 )

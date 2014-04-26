@@ -8,7 +8,6 @@ import (
 type Dowser struct {
 	docRoot string;
 	index Index;
-
 }
 
 func Create () *Dowser{
@@ -24,7 +23,6 @@ func (this *Dowser) Initiate(docRoot string) {
 		docRoot = user.HomeDir + "/.dowsing";
 		log.Printf("set default docRoot: %s\n", docRoot);
 	}
-
 }
 
 func (this *Dowser) Encode2Document (data string) *Document {
@@ -32,7 +30,6 @@ func (this *Dowser) Encode2Document (data string) *Document {
 }
 
 func (this *Dowser) UpdateIndex(doc *Document) {
-
 
 }
 
