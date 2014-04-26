@@ -1,6 +1,7 @@
 package dowser
 import(
 "github.com/shinpei/go-mecab"
+"fmt"
 )
 
 type Index struct {
@@ -8,9 +9,10 @@ type Index struct {
 }
 
 func (this *Index) IssueQuery(query string) []int {
-
-
-  return make ([]int, 10);
+  tagger := mecab.Create();
+  result := tagger.Parse(query)
+	fmt.Println(result)
+  return make([]int, 10);
 }
 
 func (this *Index) GetDocument (position int) *DowserResponse {
