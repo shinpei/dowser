@@ -1,7 +1,6 @@
 package dowser
 import(
 "github.com/shinpei/go-mecab"
-"fmt"
 )
 
 type Index struct {
@@ -10,8 +9,19 @@ type Index struct {
 
 func (this *Index) IssueQuery(query string) []int {
   tagger := mecab.Create();
-  result := tagger.Parse(query)
-	fmt.Println(result)
+  headerNode := tagger.ParseToNode(query);
+  var currentNode *mecab.Node = headerNode;
+
+  // initialize map
+  if (this.inverseIndex == nil) {
+    this.inverseIndex = make(map[string]int);
+  }
+
+
+  for i := 0; currentNode.HasNext(); i++ {
+    currentNode.Next();
+    this.inverseIndex[currentNode.GetSurface()] = 1;
+  }
   return make([]int, 10);
 }
 
