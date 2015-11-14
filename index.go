@@ -1,20 +1,25 @@
 package dowser
-import(
-"github.com/shinpei/go-mecab"
-"fmt"
+
+import (
+//	"fmt"
 )
 
 type Index struct {
-    inverseIndex map[string] int;
+	inverseIndex map[string]int
 }
 
-func (this *Index) IssueQuery(query string) []int {
-  tagger := mecab.Create();
-  result := tagger.Parse(query)
-	fmt.Println(result)
-  return make([]int, 10);
-}
+func (this *Index) Query(query string) []int {
 
-func (this *Index) GetDocument (position int) *DowserResponse {
-  return nil;
+	// parse as query language parser
+
+	// Tokenize with tokenizer
+	tokenizer := NewSpaceTokenizer()
+	tokenForSearch := tokenizer.Tokenize(query)
+
+	// search for each token
+
+	return []int{1}
+}
+func (this *Index) GetDocument(position int) *DowserResponse {
+	return nil
 }
