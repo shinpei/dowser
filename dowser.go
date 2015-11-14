@@ -7,11 +7,11 @@ import (
 
 type Dowser struct {
 	docRoot string
-	index   Index
+	index   *Index
 }
 
 func Create() *Dowser {
-	return &Dowser{docRoot: ""}
+	return &Dowser{docRoot: "", index: &Index{}}
 }
 
 func (this *Dowser) Initiate(docRoot string) {

@@ -1,7 +1,7 @@
 package dowser
 
 type Tokenizer interface {
-	Tokenize() ([]Token, error)
+	Tokenize(target string) ([]Token, error)
 }
 
 type TokenizerConfig struct {
@@ -15,6 +15,6 @@ func NewSpaceTokenizer() *SpaceTokenizer {
 	return &SpaceTokenizer{}
 }
 
-func (tok *SpaceTokenizer) Tokenize() (tokens []Token, err error) {
+func (tok *SpaceTokenizer) Tokenize(target string) (tokens []Token, err error) {
 	return nil, nil
 }
